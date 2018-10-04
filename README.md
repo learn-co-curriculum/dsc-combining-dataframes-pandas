@@ -5,8 +5,15 @@
 
 In this section, we'll learn about how to combine DataFrames with concatenation.  We'll also learn how to read in tables from SQL databases and store them in DataFrames, as well as the various types of joins that exist and how we can perform them in pandas.  
 
+## Objectives:
+You will be able to:
+* Understand and explain when to use DataFrame joins and merges
+* Be able to use pd.merge when combining DataFrames based on column values
+* Understand, explain and use a range of DataFrame merge types: outer, inner, left and right
+* Use pd.concat() to stack DataFrames
 
-### Concatenating DataFrames
+
+## Concatenating DataFrames
 
 Recall that "concatenation" means adding the contents of a second collection on to the end of the a first collection.  We learned how to do this when working with strings.  For instance:
 
@@ -35,7 +42,7 @@ Note that there are many different optional keyword arguments we can set with `p
 
 Often, we'll want to load SQL tables directly into pandas to take advantage of all the functionality that DataFrames provide.  This is easy to do, since SQL tables and pandas DataFrames have the same innate structure.  
 
-The easiest way to load in a table from a SQL database is to use the `pd.load_sql_table()` method.  However, in order to use this, we first have to connect to the database in question using the `sqlalchemy` library.  
+The easiest way to load in a table from a SQL database is to use the `pd.load_sql_table()` method.  However, in order to use this, we first have to connect to the database in question using the `sqlalchemy` library. Don't worry too much about the details of SQL or `sqlalchemy` - we'll dig into both of them later in the course.
 
 The following code demonstrates how to create an `engine` object using sqlalchemy that will connect to our database for us and allow us to use the `pd.read_sql_table()` method in pandas:
 
@@ -97,3 +104,8 @@ Note that to call `.join()`, we must pass in the right table.  We can also set t
 **If** `how=` **is not specified, it defaults to `'left'`.**
 
 **_NOTE:_** If both tables contain columns with the same name, the join will throw an error due to a naming collision, since the resulting table would have multiple columns with the same name.  To solve this, pass in a value to `lsuffix=` or `rsuffix=`, which will append this suffix to the offending columns to resolve the naming collisions. 
+
+## Summary
+
+In this section we learned how to use concatenation to join together multiple DataFrames in Pandas.
+
