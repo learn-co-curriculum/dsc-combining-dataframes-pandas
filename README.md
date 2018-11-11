@@ -23,7 +23,7 @@ print('Data ' + 'Science!')
 ```
 Since strings are a form of collections in python, we can concatenate them as above.  
 
-DataFrames are also collections, so it stands to reason that pandas provides an easy way to concatenate them.  Examine the following diagram from the pandas documentation on concatentation:
+DataFrames are also collections, so it stands to reason that pandas provides an easy way to concatenate them.  Examine the following diagram from the pandas documentation on concatenation:
 
 <img src='concat.png'>
 
