@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this section, we'll learn about how to combine DataFrames with concatenation.  We'll also learn how to read in tables from SQL databases and store them in DataFrames, as well as the various types of joins that exist and how we can perform them in pandas.  
+In this section, you'll learn about how to combine DataFrames with concatenation.  You'll also learn how to read in tables from SQL databases and store them in DataFrames, as well as the various types of joins that exist and how you can perform them in pandas.  
 
 ## Objectives:
 You will be able to:
@@ -15,13 +15,13 @@ You will be able to:
 
 ## Concatenating DataFrames
 
-Recall that "concatenation" means adding the contents of a second collection on to the end of the a first collection.  We learned how to do this when working with strings.  For instance:
+Recall that "concatenation" means adding the contents of a second collection on to the end of the a first collection.  You learned how to do this when working with strings.  For instance:
 
 ```python
 print('Data ' + 'Science!')
 # Output: "Data Science!"
 ```
-Since strings are a form of collections in python, we can concatenate them as above.  
+Since strings are a form of collections in python, you can concatenate them as above.  
 
 DataFrames are also collections, so it stands to reason that pandas provides an easy way to concatenate them.  Examine the following diagram from the pandas documentation on concatenation:
 
@@ -29,43 +29,20 @@ DataFrames are also collections, so it stands to reason that pandas provides an 
 
 In this example, 3 DataFrames have been concatenated, resulting in one larger dataframe containing the contents in the order they were concatenated.  
 
-To perform a concatenation between 2 or more DataFrames, we pass in an array of the objects to concatenate to the `pd.concat()` function, as demonstrated below:
+To perform a concatenation between 2 or more DataFrames, you pass in an array of the objects to concatenate to the `pd.concat()` function, as demonstrated below:
 
 ```python
 to_concat = [df1, df2, df3]
 big_df = pd.concat(to_concat)
 ```
 
-Note that there are many different optional keyword arguments we can set with `pd.concat()`--for a full breakdown of all the ways we can use this method, take a look at the [pandas documentation](http://pandas.pydata.org/pandas-docs/stable/merging.html).
-
-## Working With SQL Tables
-
-Often, we'll want to load SQL tables directly into pandas to take advantage of all the functionality that DataFrames provide.  This is easy to do, since SQL tables and pandas DataFrames have the same innate structure.  
-
-The easiest way to load in a table from a SQL database is to use the `pd.load_sql_table()` method.  However, in order to use this, we first have to connect to the database in question using the `sqlalchemy` library. Don't worry too much about the details of SQL or `sqlalchemy` - we'll dig into both of them later in the course.
-
-The following code demonstrates how to create an `engine` object using sqlalchemy that will connect to our database for us and allow us to use the `pd.read_sql_table()` method in pandas:
-
-```python
-from sqlalchemy import create_engine
-
-database_path = "some_database"
-table_name = "some_Table
-
-engine = create_engine('sqlite:///' + database_path, echo=False)
-
-df_from_table = pd.read_sql_table(table_name, engine)
-```
-
-Note that in this case, we need to provide both the path to the database during the creation of the `engine` object, as well as the table name to read in and store in a DataFrame when using the `read_sql_table()` method (as well as the engine object we created).
-
-Once we have read in a table using this method, you'll have a regular pandas DataFrame to work with!
+Note that there are many different optional keyword arguments you can set with `pd.concat()`--for a full breakdown of all the ways you can use this method, take a look at the [pandas documentation](http://pandas.pydata.org/pandas-docs/stable/merging.html).
 
 ### Keys and Indexes
 
-Every table in a Database has a column that serves as the **_Primary Key_**. This key acts as the index for that table.  We'll use these keys, along with the **_Foreign Key_**, which points to a primary key value in another table, to execute **_Joins_**. This allows us to "line up" information from multiple tables and combine them into one table. We'll learn more about Primary Keys and Foreign Keys in the next section when we dive into SQL and relational databases, so don't worry too much about these concepts now. 
+Every table in a Database has a column that serves as the **_Primary Key_**. In pandas, the index is the primary key for that table. You'll use these keys, along with the **_Foreign Key_**, which points to a primary key value in another table, to execute **_Joins_**. This allows us to "line up" information from multiple tables and combine them into one table. You'll learn more about Primary Keys and Foreign Keys in the next future when you'll dive into SQL and relational databases, so don't worry too much about these concepts now. That said, you can use similar functionality in Pandas.
 
-Often, it is useful for us to set a column to act as the index for a DataFrame.  To do this, we would type:
+Often, it is useful for us to set a column to act as the index for a DataFrame.  To do this, you would type:
 
 ```python
 some_dataframe.set_index("name_of_index_column", inplace=True)
@@ -75,11 +52,11 @@ Note that this will mutate the dataset in place and set the column with the spec
 
 **_NOTE:_** Running cells that make an `inplace` change more than once will often cause pandas to throw an error.  If this happens, just restart the kernel.
 
-By setting the index columns on DataFrames, we make it easy for us to join DataFrames later on. Note that this is not always feasible, but it's a useful step when possible.  
+By setting the index columns on DataFrames, you make it easy to join DataFrames later on. Note that this is not always feasible, but it's a useful step when possible.  
 
 ### Types of Joins
 
-Joins are always executed between a **_Left Table_** and a **_Right Table_**.  There are four different types of Joins we can execute.  Consider the following Venn Diagrams:
+Joins are always executed between a **_Left Table_** and a **_Right Table_**.  There are four different types of Joins you can execute.  Consider the following Venn Diagrams:
 
 <img src='joins.png'>
 
@@ -99,7 +76,7 @@ DataFrames contain a built-in `.join()` method. By default, the table calling th
 joined_df = df1.join(df2, how='inner')
 ```
 
-Note that to call `.join()`, we must pass in the right table.  We can also set the type of join to perform with the `how` parameter.  The options are `'left'`, `'right'`, `'inner'`, and `'outer'`.
+Note that to call `.join()`, you must pass in the right table.  You can also set the type of join to perform with the `how` parameter.  The options are `'left'`, `'right'`, `'inner'`, and `'outer'`.
 
 **If** `how=` **is not specified, it defaults to `'left'`.**
 
@@ -107,5 +84,5 @@ Note that to call `.join()`, we must pass in the right table.  We can also set t
 
 ## Summary
 
-In this section we learned how to use concatenation to join together multiple DataFrames in Pandas.
+In this section you learned how to use concatenation to join together multiple DataFrames in Pandas.
 
