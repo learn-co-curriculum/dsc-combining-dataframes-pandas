@@ -5,7 +5,7 @@
 
 In this section, we'll learn about how to combine DataFrames with concatenation.  We'll also learn how to read in tables from SQL databases and store them in DataFrames, as well as the various types of joins that exist and how we can perform them in pandas.  
 
-## Objectives:
+## Objectives
 You will be able to:
 * Understand and explain when to use DataFrame joins and merges
 * Be able to use pd.merge when combining DataFrames based on column values
@@ -25,7 +25,7 @@ Since strings are a form of collections in python, we can concatenate them as ab
 
 DataFrames are also collections, so it stands to reason that pandas provides an easy way to concatenate them.  Examine the following diagram from the pandas documentation on concatenation:
 
-<img src='concat.png'>
+<img src='images/concat.png'>
 
 In this example, 3 DataFrames have been concatenated, resulting in one larger dataframe containing the contents in the order they were concatenated.  
 
@@ -61,7 +61,7 @@ Note that in this case, we need to provide both the path to the database during 
 
 Once we have read in a table using this method, you'll have a regular pandas DataFrame to work with!
 
-### Keys and Indexes
+## Keys and Indexes
 
 Every table in a Database has a column that serves as the **_Primary Key_**. This key acts as the index for that table.  We'll use these keys, along with the **_Foreign Key_**, which points to a primary key value in another table, to execute **_Joins_**. This allows us to "line up" information from multiple tables and combine them into one table. We'll learn more about Primary Keys and Foreign Keys in the next section when we dive into SQL and relational databases, so don't worry too much about these concepts now. 
 
@@ -77,11 +77,11 @@ Note that this will mutate the dataset in place and set the column with the spec
 
 By setting the index columns on DataFrames, we make it easy for us to join DataFrames later on. Note that this is not always feasible, but it's a useful step when possible.  
 
-### Types of Joins
+## Types of Joins
 
 Joins are always executed between a **_Left Table_** and a **_Right Table_**.  There are four different types of Joins we can execute.  Consider the following Venn Diagrams:
 
-<img src='joins.png'>
+<img src="images/joins.png">
 
 When thinking about Joins, it is easy to conceptualize them as Venn Diagrams.  
 
@@ -107,5 +107,5 @@ Note that to call `.join()`, we must pass in the right table.  We can also set t
 
 ## Summary
 
-In this section we learned how to use concatenation to join together multiple DataFrames in Pandas.
+In this section, we learned how to use concatenation to join together multiple DataFrames in Pandas.
 
