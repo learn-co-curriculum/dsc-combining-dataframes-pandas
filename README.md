@@ -25,7 +25,7 @@ Since strings are a form of collections in python, you can concatenate them as a
 
 DataFrames are also collections, so it stands to reason that pandas provides an easy way to concatenate them.  Examine the following diagram from the pandas documentation on concatenation:
 
-<img src='images/concat.png'>
+<img src='images/Image_197_concat.png'>
 
 In this example, 3 DataFrames have been concatenated, resulting in one larger dataframe containing the contents in the order they were concatenated.  
 
@@ -58,7 +58,7 @@ By setting the index columns on DataFrames, you make it easy to join DataFrames 
 
 Joins are always executed between a **_Left Table_** and a **_Right Table_**.  There are four different types of Joins you can execute.  Consider the following Venn Diagrams:
 
-<img src='images/joins.png'>
+<img src='images/Image_198_joins.png'>
 
 When thinking about Joins, it is easy to conceptualize them as Venn Diagrams.  
 
