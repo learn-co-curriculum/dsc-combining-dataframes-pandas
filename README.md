@@ -15,7 +15,7 @@ You will be able to:
 
 ## Concatenating DataFrames
 
-Recall that "concatenation" means adding the contents of a second collection on to the end of the a first collection.  You learned how to do this when working with strings.  For instance:
+Recall that "concatenation" means adding the contents of a second collection on to the end of the first collection.  You learned how to do this when working with strings.  For instance:
 
 ```python
 print('Data ' + 'Science!')
@@ -84,6 +84,6 @@ Note that to call `.join()`, you must pass in the right table.  You can also set
 
 ## Summary
 
-In this section you learned how to use concatenation to join together multiple DataFrames in Pandas.
+In this lesson, you learned how to use concatenation to join together multiple DataFrames in Pandas.
 
 
